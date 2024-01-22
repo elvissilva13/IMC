@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando IMC</title>
+</head>
+<body>
+    <h1>Calculando IMC</h1>
+    <script>
+        function pulaLinha(){
+           
+            document.write("</br></br>");
+            
+           
+        }  
+        function mostra(frase){
+            document.write("************************************************");
+            pulaLinha();
+            document.write(frase);
+             pulaLinha();
+            document.write("************************************************");
+             pulaLinha();
+        } 
+        
+        var nome = prompt("Digite seu nome.");
+        var peso = prompt("Digite seu Peso.");
+        var altura = prompt("Digite sua Altura.");
+
+        function calculaImc (peso,altura) {
+
+            var imc = peso / (altura * altura);
+           
+            imc = imc.toFixed(2);
+
+            if(imc < 16.9) {
+                return imc +(" Peso muito abaixo ");
+            
+            }else if((imc >= 17) & (imc <= 18.4)){
+                return imc +(" Abaixo do Peso");
+
+            
+            }else if ((imc >= 18.5) & (imc <= 24.9)){
+                return imc +(" Peso normal");
+
+            
+            }else if((imc >= 25) & (imc <= 29.9)){
+                return imc +(" Acima do Peso");
+
+            
+            }else if((imc >= 30) & (imc <= 34.9)){
+                return imc +(" Obesidade grau I");
+
+            
+            }else if((imc >= 35) & (imc <= 40)){
+                return imc +(" Obesidade grau II");
+
+            
+            }else if(imc > 40){
+                return imc +(" Obesidade grau III");
+
+            }
+
+
+        }
+        mostra(nome.toUpperCase() + " seu IMC é " + calculaImc(peso,altura));
+
+    </script>
+</body>
+</html>
